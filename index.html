@@ -20,10 +20,9 @@
         <p>Resize the browser window to see that the container width will change at different breakpoints.</p>
     </div>
     <div id="image" class="row"></div>
-
     <script>
         const apiKey = "voMSPxi5GZrWCayndrYWBzicGiee8jJllbOwfgPZ";
-        const today = "2024-10-02";
+        const today = "2024-10-09";
         fetch(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${today}`)
             .then(response => response.json())
             .then(data => {
@@ -35,8 +34,9 @@
           <div class="center">
             <h4>Today's space image</h4>
             <div class="">
-              <img src="${data.url}" class="center" alt="${data.title}">
+              <img src="${data.url}" class="center responsive" alt="${data.title}">
               <div class="">
+                <br>
                 <h5>${data.title}</h5>
                 <p>${data.date}</p>
                 <p>
@@ -55,6 +55,86 @@
                 document.getElementById("image").innerHTML = "<p>Tietoa ei pystytä hakemaan</p>";
             });
     </script>
+    <br>
+    <div class="container">
+        <h3>Space is cool!</h3>
+        <div class="d-flex flex-wrap gap-4">
+            <!-- Mustat aukot kortti -->
+            <div class="col-auto">
+                <div class="card" style="width: 20rem;">
+                    <img src="black_hole.gif" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Black Holes</h5>
+                        <p class="card-text">Black holes are among the most mysterious cosmic objects. These objects aren’t really holes. They’re huge concentrations of matter packed into very tiny spaces. Black holes don’t emit or reflect light, making them effectively invisible to telescopes. (NASA)</p>
+                        <a href="https://science.nasa.gov/universe/black-holes/" class="btn btn-dark">Read more!</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Asteroidit kortti -->
+            <div class="col-auto">
+                <div class="card" style="width: 20rem;">
+                    <img src="asteroid.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Asteroids</h5>
+                        <p class="card-text">Asteroids, sometimes called minor planets, are rocky, airless remnants left over from the early formation of our solar system about 4.6 billion years ago. Most asteroids can be found orbiting the Sun between Mars and Jupiter within the main asteroid belt. (NASA)</p>
+                        <a href="https://science.nasa.gov/solar-system/asteroids/" class="btn btn-dark">Read more!</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Planeetat kortti -->
+            <div class="col-auto">
+                <div class="card" style="width: 20rem;">
+                    <img src="planet.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Planets</h5>
+                        <p class="card-text">What is a planet? The word goes back to the ancient Greek word planēt, and it means "wanderer." A more modern definition can be found in the Merriam-Webster dictionary which defines a planet as "any of the large bodies that revolve around the Sun in the solar system." (NASA)</p>
+                        <a href="https://science.nasa.gov/solar-system/planets/" class="btn btn-dark">Read more!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="d-flex flex-wrap gap-4">
+            <!-- Galaksit kortti -->
+            <div class="col-auto">
+                <div class="card" style="width: 20rem;">
+                    <img src="galaxy.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Galaxies</h5>
+                        <p class="card-text">Galaxies consist of stars, planets, and vast clouds of gas and dust, all bound together by gravity. The largest contain trillions of stars and can be more than a million light-years across. The smallest can contain a few thousand stars and span just a few hundred light-years. Most large galaxies have supermassive black holes at their centers, some with billions of times the Sun’s mass. (NASA)</p>
+                        <br>
+                        <a href="https://science.nasa.gov/universe/galaxies/" class="btn btn-dark">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Neutornitähdet kortti -->
+            <div class="col-auto">
+                <div class="card" style="width: 20rem;">
+                    <img src="neutron_star.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Stars</h5>
+                        <p class="card-text">Astronomers estimate that the universe could contain up to one septillion stars – that’s a one followed by 24 zeros. Our Milky Way alone contains more than 100 billion, including our most well-studied star, the Sun. Stars are giant balls of hot gas – mostly hydrogen, with some helium and small amounts of other elements. (NASA)
+</p>
+                        <a href="https://science.nasa.gov/universe/stars/" class="btn btn-dark">Read more!</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Kuut kortti -->
+            <div class="col-auto">
+                <div class="card" style="width: 20rem;">
+                    <img src="moon.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Moons</h5>
+                        <p class="card-text">Naturally-formed bodies that orbit planets are called moons, or planetary satellites. Moons come in many shapes, sizes, and types. There are hundreds of moons in our solar system. (NASA)</p>
+                        <a href="https://science.nasa.gov/solar-system/moons/" class="btn btn-dark">Read more!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
 
 </body>
 
