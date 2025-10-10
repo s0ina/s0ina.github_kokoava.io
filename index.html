@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="bootstrap.css" rel="stylesheet">
+    <!-- Oma css -->
     <link href="styles.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -13,16 +14,22 @@
 
 <body>
 
-    <div class="container">
-        <h1>My First Bootstrap Page</h1>
-        <p>This part is inside a .container class.</p>
-        <p>The .container class provides a responsive fixed width container.</p>
-        <p>Resize the browser window to see that the container width will change at different breakpoints.</p>
+    <!-- Sivun header-osio -->
+    <div class="fluid">
+        <div class="jumbotron">
+            <div class="container">
+                <h1>Welcome!</h1>
+                <br>
+                <h5>This page contains a daily space image provided by NASA's APOD API and interesting information about
+                    common space phenomena.</h5>
+            </div>
+        </div>
     </div>
+    <!-- Haetaan päivän kuva NASA:n rajapinnasta uniikilla API--avaimella -->
     <div id="image" class="row"></div>
     <script>
         const apiKey = "voMSPxi5GZrWCayndrYWBzicGiee8jJllbOwfgPZ";
-        const today = "2024-10-09";
+        const today = "2025-09-24";
         fetch(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${today}`)
             .then(response => response.json())
             .then(data => {
@@ -32,7 +39,8 @@
                 //Kuvaus piilotetaan collapse-painikkeen taakse
                 photo.innerHTML += `
           <div class="center">
-            <h4>Today's space image</h4>
+            <h3>Today's space image by Nasa</h3>
+            <br>
             <div class="">
               <img src="${data.url}" class="center responsive" alt="${data.title}">
               <div class="">
@@ -44,7 +52,7 @@
                 Click for more info!
                 </a>
                 <div class="collapse" id="collapseExample">
-                <div class="card card-body">${data.explanation}</div>
+                <div class="card card-body">${data.explanation} (NASA)</div>
             </div>
           </div>
         `;
@@ -56,16 +64,22 @@
             });
     </script>
     <br>
+    <br>
     <div class="container">
         <h3>Space is cool!</h3>
+        <br>
+        <!-- Uusi rivi, jätetään korttien välille tilaa ja asetetaan kolme vierekkäin -->
         <div class="d-flex flex-wrap gap-4">
             <!-- Mustat aukot kortti -->
             <div class="col-auto">
                 <div class="card" style="width: 20rem;">
-                    <img src="black_hole.gif" class="card-img-top" alt="...">
+                    <img src="black_hole.gif" class="card-img-top" alt="Black hole">
                     <div class="card-body">
                         <h5 class="card-title">Black Holes</h5>
-                        <p class="card-text">Black holes are among the most mysterious cosmic objects. These objects aren’t really holes. They’re huge concentrations of matter packed into very tiny spaces. Black holes don’t emit or reflect light, making them effectively invisible to telescopes. (NASA)</p>
+                        <p class="card-text">Black holes are among the most mysterious cosmic objects. These objects
+                            aren’t really holes. They’re huge concentrations of matter packed into very tiny spaces.
+                            Black holes don’t emit or reflect light, making them effectively invisible to telescopes.
+                            (NASA)</p>
                         <a href="https://science.nasa.gov/universe/black-holes/" class="btn btn-dark">Read more!</a>
                     </div>
                 </div>
@@ -73,10 +87,13 @@
             <!-- Asteroidit kortti -->
             <div class="col-auto">
                 <div class="card" style="width: 20rem;">
-                    <img src="asteroid.jpg" class="card-img-top" alt="...">
+                    <img src="asteroid.jpg" class="card-img-top" alt="Asteroid">
                     <div class="card-body">
                         <h5 class="card-title">Asteroids</h5>
-                        <p class="card-text">Asteroids, sometimes called minor planets, are rocky, airless remnants left over from the early formation of our solar system about 4.6 billion years ago. Most asteroids can be found orbiting the Sun between Mars and Jupiter within the main asteroid belt. (NASA)</p>
+                        <p class="card-text">Asteroids, sometimes called minor planets, are rocky, airless remnants left
+                            over from the early formation of our solar system about 4.6 billion years ago. Most
+                            asteroids can be found orbiting the Sun between Mars and Jupiter within the main asteroid
+                            belt. (NASA)</p>
                         <a href="https://science.nasa.gov/solar-system/asteroids/" class="btn btn-dark">Read more!</a>
                     </div>
                 </div>
@@ -84,24 +101,32 @@
             <!-- Planeetat kortti -->
             <div class="col-auto">
                 <div class="card" style="width: 20rem;">
-                    <img src="planet.jpg" class="card-img-top" alt="...">
+                    <img src="planet.jpg" class="card-img-top" alt="Planet">
                     <div class="card-body">
                         <h5 class="card-title">Planets</h5>
-                        <p class="card-text">What is a planet? The word goes back to the ancient Greek word planēt, and it means "wanderer." A more modern definition can be found in the Merriam-Webster dictionary which defines a planet as "any of the large bodies that revolve around the Sun in the solar system." (NASA)</p>
+                        <p class="card-text">What is a planet? The word goes back to the ancient Greek word planēt, and
+                            it means "wanderer." A more modern definition can be found in the Merriam-Webster dictionary
+                            which defines a planet as "any of the large bodies that revolve around the Sun in the solar
+                            system." (NASA)</p>
                         <a href="https://science.nasa.gov/solar-system/planets/" class="btn btn-dark">Read more!</a>
                     </div>
                 </div>
             </div>
         </div>
         <br>
+        <!-- Uusi rivi, jätetään korttien välille tilaa ja asetetaan kolme vierekkäin -->
         <div class="d-flex flex-wrap gap-4">
             <!-- Galaksit kortti -->
             <div class="col-auto">
                 <div class="card" style="width: 20rem;">
-                    <img src="galaxy.jpg" class="card-img-top" alt="...">
+                    <img src="galaxy.jpg" class="card-img-top" alt="Galaxy">
                     <div class="card-body">
                         <h5 class="card-title">Galaxies</h5>
-                        <p class="card-text">Galaxies consist of stars, planets, and vast clouds of gas and dust, all bound together by gravity. The largest contain trillions of stars and can be more than a million light-years across. The smallest can contain a few thousand stars and span just a few hundred light-years. Most large galaxies have supermassive black holes at their centers, some with billions of times the Sun’s mass. (NASA)</p>
+                        <p class="card-text">Galaxies consist of stars, planets, and vast clouds of gas and dust, all
+                            bound together by gravity. The largest contain trillions of stars and can be more than a
+                            million light-years across. The smallest can contain a few thousand stars and span just a
+                            few hundred light-years. Most large galaxies have supermassive black holes at their centers,
+                            some with billions of times the Sun’s mass. (NASA)</p>
                         <br>
                         <a href="https://science.nasa.gov/universe/galaxies/" class="btn btn-dark">Go somewhere</a>
                     </div>
@@ -111,11 +136,14 @@
             <!-- Neutornitähdet kortti -->
             <div class="col-auto">
                 <div class="card" style="width: 20rem;">
-                    <img src="neutron_star.jpg" class="card-img-top" alt="...">
+                    <img src="neutron_star.jpg" class="card-img-top" alt="Star">
                     <div class="card-body">
                         <h5 class="card-title">Stars</h5>
-                        <p class="card-text">Astronomers estimate that the universe could contain up to one septillion stars – that’s a one followed by 24 zeros. Our Milky Way alone contains more than 100 billion, including our most well-studied star, the Sun. Stars are giant balls of hot gas – mostly hydrogen, with some helium and small amounts of other elements. (NASA)
-</p>
+                        <p class="card-text">Astronomers estimate that the universe could contain up to one septillion
+                            stars – that’s a one followed by 24 zeros. Our Milky Way alone contains more than 100
+                            billion, including our most well-studied star, the Sun. Stars are giant balls of hot gas –
+                            mostly hydrogen, with some helium and small amounts of other elements. (NASA)
+                        </p>
                         <a href="https://science.nasa.gov/universe/stars/" class="btn btn-dark">Read more!</a>
                     </div>
                 </div>
@@ -123,10 +151,12 @@
             <!-- Kuut kortti -->
             <div class="col-auto">
                 <div class="card" style="width: 20rem;">
-                    <img src="moon.jpg" class="card-img-top" alt="...">
+                    <img src="moon.jpg" class="card-img-top" alt="Moon">
                     <div class="card-body">
                         <h5 class="card-title">Moons</h5>
-                        <p class="card-text">Naturally-formed bodies that orbit planets are called moons, or planetary satellites. Moons come in many shapes, sizes, and types. There are hundreds of moons in our solar system. (NASA)</p>
+                        <p class="card-text">Naturally-formed bodies that orbit planets are called moons, or planetary
+                            satellites. Moons come in many shapes, sizes, and types. There are hundreds of moons in our
+                            solar system. (NASA)</p>
                         <a href="https://science.nasa.gov/solar-system/moons/" class="btn btn-dark">Read more!</a>
                     </div>
                 </div>
@@ -135,7 +165,15 @@
     </div>
 
     </div>
-
+    <!-- Sivun Footer-osio -->
+    <div class="fluid">
+        <div class="jumbotron-footer">
+            <div class="center">
+                <h5>© 2025 Sonja Helminen</h5>
+                <h6>Today's space image src: <a href="https://api.nasa.gov/">https://api.nasa.gov</a></h6>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

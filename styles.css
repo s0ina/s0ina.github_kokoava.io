@@ -1,9 +1,27 @@
 .center {
-  margin: auto;
-  width: 70%;
-  padding: 0px;
+    margin: auto;
+    width: 80%;
+    padding: 0px;
 }
 
-.body {
-  background-image: linear-gradient(to top, red, yellow) !important;
+.jumbotron {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 43, 54)),
+        url("space.webp") !important;
+    background-size: cover;
+    min-height: 300px;
+    min-width: 300px;
+    padding-top: 20%;
+    padding-bottom: 20%;
+}
+
+.jumbotron-footer {
+    background-image:
+        linear-gradient(rgba(0, 43, 54), rgba(0, 0, 0, 0.6)),
+        url("space.webp") !important;
+    background-size: cover;
+    min-height: 200px;
+    min-width: 200px;
+    padding-top: 20%;
+    padding-bottom: 20%;
 }
